@@ -11,7 +11,7 @@
 * [Support](#support)
 
 ## Description
-Fitness-Tracker is an interactive application that allows users to enter the names of burgers they'd like to eat. It utilizes the functionalities of express, express-handlebars and MySQL to seamlessly combine back-end technologies with the front-end.
+Fitness-Tracker is an interactive application that allows users to log and keep track of their workouts. 
 
 ## Installation
 This application requires the following node packages:
@@ -22,14 +22,15 @@ This application requires the following node packages:
 To install, run "npm install" in your Command Line System.
 
 ## Usage
-To use this application, you must first create your MySQL database by running both the schema.sql and seeds.sql files in your Command Line System. Then, enter "node server.js" & navigate to the specified port in your browser to access the application.
+To use this application, you must first create your Mongo database by running both the seed.js file in your Command Line System. Then, enter "node server.js" & navigate to the specified port in your browser to access the application.
 
 ## License
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 ## Visuals
-![](assets/burger1.png)
-![](assets/burger2.png)
+![](images/home.jpg)
+![](images/exercise.jpg)
+![](images/stats.jpg)
 
 ## Deployed Application
 
