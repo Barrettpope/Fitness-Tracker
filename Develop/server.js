@@ -4,7 +4,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 
 // Setting up PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 const app = express();
 const db = require("./models");
@@ -19,10 +19,13 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 // Routes
-app.get("api/workouts", (req, res) => {
+app.get("/api/workouts", (req, res) => {
     db.Workout.find({})
         .then(data => {
             res.json(data);
@@ -32,7 +35,7 @@ app.get("api/workouts", (req, res) => {
         })
 });
 
-app.put("api/workouts/:id", (req, res) => {
+app.put("/api/workouts/:id", (req, res) => {
     const id = req.params.id;
     const exercise = req.body;
 
@@ -49,7 +52,7 @@ app.put("api/workouts/:id", (req, res) => {
         })
 });
 
-app.post("api/workouts", (req, res) => {
+app.post("/api/workouts", (req, res) => {
     const workout = req.body;
 
     db.Workout.create(workout)
@@ -61,7 +64,7 @@ app.post("api/workouts", (req, res) => {
         })
 });
 
-app.get("api/workouts/range", (req, res) => {
+app.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
         .then(data => {
             res.json(data);
